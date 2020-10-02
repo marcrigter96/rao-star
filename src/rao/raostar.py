@@ -410,7 +410,7 @@ class RAOStar(object):
                 #     ipdb.set_trace()
 
             if self._log:
-                log_str = '\n[%d][EXPAND] Node %s\n'%(time.time(),node.name[0:5])
+                log_str = '\n[%d][EXPAND] Node %s\n'%(time.time(), str(node.state.belief.values()[0][0]))
                 log_str +='\tActions considered: '+str(all_node_actions)+'\n'
                 self._log_f.write(log_str)
 
@@ -515,7 +515,7 @@ class RAOStar(object):
                 if self._verbose>=2:
                     print("EXPAND SOLUTION: Node %s deemed terminal due to lack of feasible actions."%(node.name))
                 if self._log:
-                    log_str = "\tNode %s not expanded due to lack of feasible actions.\n"%(node.name[0:5])
+                    log_str = "\tNode %s not expanded due to lack of feasible actions.\n"%(node.state.belief.values()[0][0])
                     self._log_f.write(log_str)
 
         return nodes_to_expand
@@ -530,7 +530,7 @@ class RAOStar(object):
 
             if self._log:
                 log_str = '\n[%d][UPDATE] Nodes to be updated: '%(time.time())
-                log_str += str([n.name[0:5] for n in Z])+'\n'
+                log_str += str([str(n.state.belief.values()[0][0]) for n in Z])+'\n'
                 self._log_f.write(log_str)
 
             #Updates best action at the node
@@ -560,7 +560,7 @@ class RAOStar(object):
                 er_bound = min([node.exec_risk_bound,self._er_cap])
 
                 if self._log:
-                    log_str = "\tUpdating node %s.\n"%(node.name[0:5])
+                    log_str = "\tUpdating node %s.\n"%(str(node.state.belief.values()[0][0]))
                     self._log_f.write(log_str)
 
                 best_action_idx=-1

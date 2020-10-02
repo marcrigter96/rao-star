@@ -49,9 +49,9 @@ model = CounterExampleMDP()
 
 b0 = model.get_initial_belief()
 
-planner = RAOStar(model, node_name='id', cc=0.1, cc_type='overall',
+planner = RAOStar(model, node_name='id', cc=0.1001, cc_type='overall',
                   terminal_prob=1.0, randomization=0.0, propagate_risk=True,
-                  expand_all_open=True,verbose=1)
+                  expand_all_open=False, verbose=1, log=True)
 
 policy,explicit,performance = planner.search(b0)
 

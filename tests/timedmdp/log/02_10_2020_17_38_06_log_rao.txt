@@ -1,0 +1,83 @@
+
+[1601656686][EXPAND] Node {'s': 0}
+	Actions considered: ['A']
+		 Observation distribution: {140308753961328: [140308753961328, 0.5], 140308753961040: [140308753961040, 0.5]}
+		 Safe observation distribution: {140308753961328: [140308753961328, 0.5], 140308753961040: [140308753961040, 0.5]}
+		 Likelihood: {-3128791752970150368: [[140308753961328, 1.0]], -274894928938760639: [[140308753961040, 1.0]]}
+	*** Node 07d31: Added operator A with value 3.0000
+		Child a4008, Prob 0.5000
+		Child c4265, Prob 0.5000
+
+[1601656686][UPDATE] Nodes to be updated: ["{'s': 0}"]
+	Updating node {'s': 0}.
+		*** Best action: A, Value: 4.0000
+
+[1601656686][EXPAND] Node {'s': 1}
+	Actions considered: ['A', 'B']
+		 Observation distribution: {140308753964496: [140308753964496, 0.2], 140308753963920: [140308753963920, 0.8]}
+		 Safe observation distribution: {140308753964496: [140308753964496, 0.2], 140308753963920: [140308753963920, 0.8]}
+		 Likelihood: {-3590417481928504174: [[140308753964496, 1.0]], 8809956416742927403: [[140308753963920, 1.0]]}
+	*** Node a4008: Added operator A with value 4.0000
+		Child d9e0d, Prob 0.2000
+		Child 1dcfb, Prob 0.8000
+		 Observation distribution: {140308753988208: [140308753988208, 1.0]}
+		 Safe observation distribution: {140308753988208: [140308753988208, 1.0]}
+		 Likelihood: {-5950235448148711644: [[140308753988208, 1.0]]}
+	*** Node a4008: Added operator B with value 2.0000
+		Child 8d852, Prob 1.0000
+
+[1601656686][EXPAND] Node {'s': 2}
+	Actions considered: ['A', 'B']
+		 Observation distribution: {140308753993808: [140308753993808, 1.0]}
+		 Safe observation distribution: {140308753993808: [140308753993808, 1.0]}
+		 Likelihood: {-7688736926672422091: [[140308753993808, 1.0]]}
+	*** Node c4265: Added operator A with value 2.0000
+		Child 98f21, Prob 1.0000
+		 Observation distribution: {140308753996112: [140308753996112, 1.0]}
+		 Safe observation distribution: {140308753996112: [140308753996112, 1.0]}
+		 Likelihood: {-3983805534324930986: [[140308753996112, 1.0]]}
+	*** Node c4265: Added operator B with value 4.0000
+		Child 85cc1, Prob 1.0000
+
+[1601656686][UPDATE] Nodes to be updated: ["{'s': 1}", "{'s': 0}"]
+	Updating node {'s': 1}.
+		*** Best action: A, Value: 4.0000
+	Updating node {'s': 0}.
+		*** Best action: A, Value: 6.0000
+
+[1601656686][UPDATE] Nodes to be updated: ["{'s': 2}", "{'s': 0}"]
+	Updating node {'s': 2}.
+		*** Best action: A, Value: 2.0000
+	Updating node {'s': 0}.
+		*** Best action: A, Value: 6.0000
+
+[1601656686][EXPAND] Node {'s': 6}
+	Actions considered: ['A']
+		 Observation distribution: {140308753997552: [140308753997552, 0.01], 140308753997264: [140308753997264, 0.99]}
+		 Safe observation distribution: {140308753997552: [140308753997552, 0.01], 140308753997264: [140308753997264, 0.99]}
+		 Likelihood: {-1021734375191980519: [[140308753997552, 1.0]], 1378783612976010858: [[140308753997264, 1.0]]}
+	Action A is infeasible due to risk.
+	Node 98f21 not expanded due to lack of feasible actions.
+
+[1601656686][EXPAND] Node {'s': 4}
+	Actions considered: ['A']
+		 Observation distribution: {140308753995248: [140308753995248, 1.0]}
+		 Safe observation distribution: {140308753995248: [140308753995248, 1.0]}
+		 Likelihood: {2143249867775060463: [[140308753995248, 1.0]]}
+	*** Node 1dcfb: Added operator A with value 2.0000
+		Child 1256c, Prob 1.0000
+
+[1601656686][UPDATE] Nodes to be updated: ["{'s': 6}", "{'s': 2}", "{'s': 0}"]
+	Updating node {'s': 6}.
+	Updated node 98f21 deemed terminal due to lack of feasible actions.	Updating node {'s': 2}.
+		*** Best action: A, Value: 2.0000
+	Updating node {'s': 0}.
+		*** Best action: A, Value: 6.0000
+
+[1601656686][UPDATE] Nodes to be updated: ["{'s': 4}", "{'s': 1}", "{'s': 0}"]
+	Updating node {'s': 4}.
+		*** Best action: A, Value: 2.0000
+	Updating node {'s': 1}.
+		*** Best action: A, Value: 5.6000
+	Updating node {'s': 0}.
+		*** Best action: A, Value: 6.8000
