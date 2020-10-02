@@ -629,6 +629,9 @@ class RAOStar(object):
 
                     if (not np.isclose(best_Q,current_Q)) and self._is_better(best_Q,current_Q):
                         print('WARNING: node Q value improved, which might indicate inadmissibility.')
+                        print(best_Q)
+                        print(current_Q)
+                        print(node.state.belief)
 
                     #updates optimal value estimate
                     node.value = best_Q
