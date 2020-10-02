@@ -46,7 +46,7 @@ class CounterExampleMDP(models.CCHyperGraphModel):
         elif state['s'] == 1 and action == "B":
             return 2.0
         elif state['s'] == 2 and action == "A":
-            return 2.0
+            return 7.0
         elif state['s'] == 2 and action == "B":
             return 4.0
         elif state['s'] == 4 and action == "A":
@@ -72,8 +72,8 @@ class CounterExampleMDP(models.CCHyperGraphModel):
                 3: 0.0,
                 4: 0.0,
                 5: 10.0,
-                6: 0.0,
-                7: 20.0,
+                6: 5.0,
+                7: 0.0,
                 8: 0.0,
                 9: 0.0,
                 10: 0.0,
@@ -97,7 +97,7 @@ class CounterExampleMDP(models.CCHyperGraphModel):
             if state['s'] == 1 and action == "B":
                 return [[self.get_state(5), 1.0]]
             if state['s'] == 2 and action == "A":
-                return [[self.get_state(6), 1.0]]
+                return [[self.get_state(10), 0.01], [self.get_state(11), 0.99]]
             if state['s'] == 2 and action == "B":
                 return [[self.get_state(7), 1.0]]
             if state['s'] == 4 and action == "A":
